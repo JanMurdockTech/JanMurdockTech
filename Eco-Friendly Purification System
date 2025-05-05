@@ -1,0 +1,65 @@
+just useing python language 
+i'll try to small
+one topic are simple 
+Eco-Friendly Purification System (Python)
+import time
+import random
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+
+# Thresholds for contaminants (e.g., PM2.5 for air, or pH for water)
+SAFE_PM25 = 35  # ug/m3 (safe air quality threshold)
+MAX_ENERGY_USAGE = 50  # watts, maximum energy usage target
+
+# Simulated sensor read (replace with real sensor API)
+def read_sensor():
+    return random.uniform(10, 100)  # Simulated PM2.5 or contaminant level
+
+# Simulated actuator control (e.g., turn purifier on/off)
+def control_purifier(power_level):
+    logging.info(f"Purifier set to {power_level}% power.")
+
+# Eco-friendly controller logic
+def eco_purification_cycle():
+    for _ in range(20):  # Simulate 20 cycles
+        contaminant_level = read_sensor()
+        logging.info(f"Contaminant Level: {contaminant_level:.2f}")
+
+        if contaminant_level > SAFE_PM25:
+            # Adjust power based on severity, while saving energy
+            power = min(100, int((contaminant_level - SAFE_PM25) * 2))
+            power = max(power, 20)  # Ensure minimum purification
+            if power * 0.5 > MAX_ENERGY_USAGE:
+                power = int(MAX_ENERGY_USAGE / 0.5)  # Eco mode energy limit
+            control_purifier(power)
+        else:
+            control_purifier(0)  # Turn off if air is clean
+
+        time.sleep(1)
+
+if __name__ == "__main__":
+    logging.info("Starting Eco-Friendly Purification System")
+    eco_purification_cycle()
+    logging.info("System Shut Down")
+
+output;
+
+2025-05-05 09:08:14,778 - Starting Eco-Friendly Purification System
+2025-05-05 09:08:14,778 - Contaminant Level: 89.88
+2025-05-05 09:08:14,778 - Purifier set to 100% power.
+2025-05-05 09:08:15,778 - Contaminant Level: 93.53
+2025-05-05 09:08:15,779 - Purifier set to 100% power.
+2025-05-05 09:08:16,782 - Contaminant Level: 39.77
+2025-05-05 09:08:16,782 - Purifier set to 20% power.
+2025-05-05 09:08:17,783 - Contaminant Level: 71.45
+2025-05-05 09:08:17,783 - Purifier set to 72% power.
+2025-05-05 09:08:18,784 - Contaminant Level: 47.63
+2025-05-05 09:08:18,784 - Purifier set to 25% power.
+
+# power supply duration time parformance contamiant 
+then purifier % and powert level then confrom to date and time conformetion 
+then formet if else type condition true and false human condition 
+#
+thankyou
