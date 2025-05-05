@@ -2,6 +2,9 @@ just useing python language
 i'll try to small
 one topic are simple 
 Eco-Friendly Purification System (Python)
+
+
+
 import time
 import random
 import logging
